@@ -6,7 +6,7 @@ body {
   margin-left:10px;
 }
 .banner {
-  background-image: url("/images/bg_img.jpg");
+  background-image: url("../images/bg_img.jpg");
   padding: 220px 0;
   background-size: cover;
   background-repeat: no repeat;
