@@ -6,10 +6,10 @@ body {
   margin-left:10px;
 }
 .banner {
-  background-image: url("/portfolio/images/3.0.jpg");
+  background-image: url("../images/bg_img.jpg");
   padding: 220px 0;
   background-size: cover;
-  background-repeat: no repeat;
+  background-repeat: no-repeat;
 }
 .card{
     margin-top:15px;
@@ -44,3 +44,5 @@ body {
 footer p{
     font-size:13px;
 }
+
+
