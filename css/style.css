@@ -1,0 +1,46 @@
+body {
+    font-family:'poppins',sans-serif;
+}
+#navbarSupportedContent a:hover {
+  border-bottom: 2px solid black;
+  margin-left:10px;
+}
+.banner {
+  background-image: url("/portfolio/images/3.0.jpg");
+  padding: 220px 0;
+  background-size: cover;
+  background-repeat: no repeat;
+}
+.card{
+    margin-top:15px;
+}
+.card {
+    background: #fff;
+    border-radius: 15px;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    background: linear-gradient(135deg, #ff9800, #ff5722);
+    color: white;
+}
+.//card:hover i {
+    transform: scale(1.0);
+}
+
+.//card i {
+    transition: 0.9s;
+}
+#skills h4{
+    font-size:35px;
+  letter-spacing:2px;
+}
+#contact h4{
+  letter-spacing:3px;
+}
+footer p{
+    font-size:13px;
+}
