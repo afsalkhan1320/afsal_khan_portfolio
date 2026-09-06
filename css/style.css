@@ -408,12 +408,16 @@ body {
 
 /* Custom premium card design for Projects */
 .project-card {
-  margin-top: 15px;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
   background: #1e222b !important; /* Elegant dark card background */
   border: 1px solid rgba(255, 255, 255, 0.08) !important;
   border-radius: 16px !important;
   overflow: hidden;
   width: 100%;
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
   margin-left: auto;
   margin-right: auto;
   transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
@@ -432,19 +436,22 @@ body {
 .project-img-container {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
-  background-color: #ffffff; /* White background for clean mockup display */
+  background-color: #1e222b;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
 }
 
 .project-img {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* Fit the entire image without cropping */
+  object-fit: cover; /* Fit edge-to-edge without any gaps above and below */
   object-position: center;
+  display: block;
   transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
@@ -483,6 +490,13 @@ body {
   transform: scale(1);
 }
 
+.project-card .card-body {
+  display: flex !important;
+  flex-direction: column !important;
+  flex: 1 1 auto !important;
+  padding: 1.5rem !important;
+}
+
 /* Text styles */
 .project-card-title {
   color: #ffffff;
@@ -501,6 +515,7 @@ body {
   font-size: 0.92rem;
   line-height: 1.6;
   margin-bottom: 18px;
+  flex-grow: 1;
 }
 
 /* Technology Tags */
@@ -608,6 +623,90 @@ body {
   margin: 0 auto 50px auto;
   border-radius: 2px;
 }
+/* Responsive Certifications Grid */
+.certifications-grid {
+  display: grid;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Desktop (>= 992px): 3 columns, Web Designing in Row 2 directly below Frontend Development */
+@media (min-width: 992px) {
+  .certifications-grid {
+    grid-template-columns: repeat(3, minmax(0, 350px));
+    justify-content: center;
+    gap: 30px;
+  }
+  .cert-frontend {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .cert-testing {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .cert-sql {
+    grid-column: 3;
+    grid-row: 1;
+  }
+  .cert-web-design {
+    grid-column: 1;
+    grid-row: 2;
+  }
+}
+
+/* Tablet (768px - 991.98px): 2 columns, Web Designing in Column 1 directly below Frontend Development */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .certifications-grid {
+    grid-template-columns: repeat(2, minmax(0, 350px));
+    justify-content: center;
+    gap: 24px;
+  }
+  .cert-frontend {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .cert-web-design {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .cert-testing {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .cert-sql {
+    grid-column: 2;
+    grid-row: 2;
+  }
+}
+
+/* Mobile (< 768px): 1 column, Web Designing directly below Frontend Development */
+@media (max-width: 767.98px) {
+  .certifications-grid {
+    grid-template-columns: minmax(0, 350px);
+    justify-content: center;
+    gap: 20px;
+  }
+  .cert-frontend {
+    order: 1;
+  }
+  .cert-web-design {
+    order: 2;
+  }
+  .cert-testing {
+    order: 3;
+  }
+  .cert-sql {
+    order: 4;
+  }
+}
+
+.cert-item {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
 .cert-card {
   background: #ffffff;
   border: none;
@@ -615,11 +714,14 @@ body {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   padding: 40px 24px;
-  margin-bottom: 30px;
+  margin-bottom: 0;
   width: 100%;
   max-width: 350px;
   margin-left: auto;
   margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 .cert-card:hover {
   transform: translateY(-8px);
@@ -656,6 +758,10 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+.cert-btn-wrapper {
+  margin-top: auto;
+  text-align: center;
 }
 .cert-btn {
   display: inline-block;
